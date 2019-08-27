@@ -36,8 +36,10 @@ button{
 </style>
 </head>
 <body>
-	<input type="number" id="howManyRainbowStripsDoYouWantHeu" min="0" max="999" value="360">
-	<button onclick="rainbowHaiDooNoy()">Go!</button>
+	<input type="number" id="howManyRainbowStripsDoYouWantHeu" min="0" max="999" value="25">
+	<button onclick="rainbowHaiDooNoy()">Go!</button>function
+	<button onclick="rainbowYaiJung()">PLAY!!!</button>
+	<button onclick="stopRainbow()">STOP</button>
 	<div id="rainbow">
 	</div>
 	<script type="text/javascript">
@@ -46,11 +48,30 @@ button{
 			rainbow.innerHTML = '';
 			for (let i = 0; i < theNum; i++) {
 				setTimeout(function(){
-					rainbow.innerHTML += `<div class="fuse" style="--hue:${i*(360/theNum)}"></div>`;
+					rainbow.innerHTML += `<div class="fuse" id="fuse${i}" style="--hue:${i*(360/theNum)}"></div>`;
 				},20*i)
 				
 			}
 		}
+		function rainbowYaiJung(){
+			theFuse = document.querySelectorAll('.fuse');
+            theFuseSize = theFuse.length;
+            j = theFuseSize-1;
+            k = 0;
+            setInterval(function(){
+            	if(k >= theFuseSize){k=0;}
+            	if(j >= theFuseSize){j=0;}
+            	theFuse[k].style.transform = "scale(2)";
+            	theFuse[j].style.transform = "scale(1)";
+            	k++;
+            	j++;
+            },300)
+       	}
+       	function stopRainbow(){
+       		clearInvertal(theplay);
+       		theFuse[j].style.transform = "scale(1)";
+       	}
+
 	</script>
 </body>
 </html>
