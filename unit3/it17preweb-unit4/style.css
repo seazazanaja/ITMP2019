@@ -6,8 +6,7 @@ body{
 	background-image: url(bg.png);
 	background-position: 0% 0%;
 	background-size: 20%;
-	/*background-size: cover;*/
-	min-height: 100vh; /*ทำให้เวลาทำพื้นหลังแล้วมันสูงเต็มหน้าจอ*/
+	min-height: 100vh;
 	animation: bg 40s infinite linear;
 }
 @keyframes bg{
@@ -54,7 +53,6 @@ body{
 	from{transform: rotate(-5deg);}
 	to{transform: rotate(10deg);}
 }
-
 #cookie{
 	position: relative;
 	display: inline-block;
@@ -62,7 +60,7 @@ body{
 }
 @keyframes cookie-swing{
 	from{transform: rotate(10deg);}
-	to{transform: rotate(-10deg);}
+	to{transform: rotate(-360deg);}
 }
 @keyframes cookie-hide{
 	from{transform: rotate(10deg) scale(1);}
@@ -88,7 +86,6 @@ body{
 	animation: cookie-hide 2s 1 reverse;
 	transform: scale(1.25);
 }
-
 #fortune {
     position: absolute;
     top: 106px;
