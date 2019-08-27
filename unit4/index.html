@@ -15,8 +15,9 @@
 	transition: all .3s;
 	height:var(--size);
 	width: var(--size);
-	background: hsl(var(--hue),90%,70%);
+	background: hsl(var(--hue),75%,75%);
 	display: inline-block;
+	border-radius: 50%;
 }
 #howManyRainbowStripsDoYouWantHeu{
 	padding: 0.5em;
@@ -35,7 +36,7 @@ button{
 </style>
 </head>
 <body>
-	<input type="number" id="howManyRainbowStripsDoYouWantHeu" min="0" max="999" value="6">
+	<input type="number" id="howManyRainbowStripsDoYouWantHeu" min="0" max="999" value="360">
 	<button onclick="rainbowHaiDooNoy()">Go!</button>
 	<div id="rainbow">
 	</div>
@@ -46,7 +47,7 @@ button{
 			for (let i = 0; i < theNum; i++) {
 				setTimeout(function(){
 					rainbow.innerHTML += `<div class="fuse" style="--hue:${i*(360/theNum)}"></div>`;
-				},1000/(theNum*i))
+				},20*i)
 				
 			}
 		}
