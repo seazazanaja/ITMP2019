@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ลงทะเบียน</title>
+</head>
+<body>
+	<form onsubmit="return register()">
+
+<h2>ลงทะเบียนร่วมงาน</h2>
+
+<input type="text" class="info" placeholder="ชื่อ" required>
+
+<button>ลงทะเบียน</button>
+
+</form>
+
+<br><hr><br>
+
+<table>
+
+<thead>
+
+<th>ลำดับที่</th>
+
+<th>ชื่อ</th>
+</thead>
+
+<tbody id="registerList">
+
+</tbody>
+
+</table>
+<script>
+	var i = 1;
+	function register() {
+		people = document.createElement("tr");
+		people.innerHTML =`<td>${i}</td> <td>${document.querySelector('.info').value}</td>`;
+		registerList.appendChild(people);
+		document.querySelector('.info').value = "";
+		i++
+		return false;
+	}
+</script>
+</body>
+</html>
